@@ -18,7 +18,7 @@ public class MainGame extends BasicGame {
     public MainGame(java.lang.String title) {
         super(title);
     }
-    private int x;
+    private int x ;
     private int y;
 
     @java.lang.Override
