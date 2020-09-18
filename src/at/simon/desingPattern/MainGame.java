@@ -19,7 +19,7 @@ public class MainGame extends BasicGame {
         super(title);
     }
     private int x;
-    private int y;
+    private int y  ;
 
     @java.lang.Override
     public void init(GameContainer gc) throws SlickException {
