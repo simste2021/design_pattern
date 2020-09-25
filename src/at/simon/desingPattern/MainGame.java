@@ -29,9 +29,12 @@ public class MainGame extends BasicGame {
         super(title);
     }
 
+    Player player = new Player(10,10, (float) 2);
+
     @java.lang.Override
     public void init(GameContainer gc) throws SlickException {
         this.actors = new ArrayList<>();
+
 
         MoveStrategy mr1 = new MoveRight(rand.nextInt(700),rand.nextInt(300), (float) 0.3);
 
@@ -48,6 +51,7 @@ public class MainGame extends BasicGame {
         for(Actor actor : this.actors){
             actor.update(gc,delta);
         }
+        player.move(gc,delta);
     }
 
     @java.lang.Override
@@ -55,5 +59,7 @@ public class MainGame extends BasicGame {
         for(Actor actor : this.actors){
             actor.render(graphics);
         }
+        player.draw(graphics);
+
     }
 }
