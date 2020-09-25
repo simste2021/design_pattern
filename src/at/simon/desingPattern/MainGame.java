@@ -32,9 +32,14 @@ public class MainGame extends BasicGame {
     @java.lang.Override
     public void init(GameContainer gc) throws SlickException {
         this.actors = new ArrayList<>();
-        for(int i = 0; i < 999; i++) {
-            this.actors.add(new Circle(rand.nextInt(800), rand.nextInt(600), rand.nextInt(10)));
-        }
+
+        MoveStrategy mr1 = new MoveRight(rand.nextInt(700),rand.nextInt(300), (float) 0.3);
+
+        MoveStrategy mr2 = new MoveLeft(rand.nextInt(700),rand.nextInt(300), (float) 0.3);
+
+        actors.add(new Circle(mr1, rand.nextInt(99)));
+
+        actors.add(new Circle(mr2, rand.nextInt(99)));
 
     }
 
